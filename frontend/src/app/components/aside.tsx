@@ -5,15 +5,15 @@ import NavBar from "./navbar";
 
 export default function Aside() {
   return (
-  <aside className="w-64 p-6 bg-white/20">
-          <Image
-            src={"/image.png"}
-            className="w-full"
-            alt="Logo"
-            width={200}
-            height={200}
-          />
-            <NavBar/>
-        </aside>
-  )
+    <aside className="w-64 h-screen flex flex-col p-6 transparent">
+      <Image
+        src={"/image.png"}
+        className="w-full"
+        alt="Logo"
+        width={4000}
+        height={4000}
+      />
+      <NavBar />
+    </aside>
+  );
 }
