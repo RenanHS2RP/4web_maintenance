@@ -46,6 +46,11 @@ const table = [
 ];
 
 export default function Home() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
   return (
     <div className="flex flex-col min-h-screen">
       <section className="flex-1 flex">
@@ -55,23 +60,23 @@ export default function Home() {
             Sistema de Gestão de manutenção
           </h1>
           <div className="p-6">
-            <div className="grid grid-cols-4 gap-4">
-              {cards.map((obj, index) => (
-                <Card
-                  key={index}
-                  color={obj.color}
-                  qty={obj.quantity}
-                  text={obj.text}
-                  icon={obj.icon}
-                />
-              ))}
-            </div>
-            <div className="p-6 mt-6 bg-white/20 rounded-xl">
-              <table className="w-full bg-green-100 rounded-xl">
-                <thead>
-                  <tr className="bg-green-300">
-                    <th className="w-[40%] p-2">Ambiente</th>
-                    <th className="w-[20%] p-2">Equipamento</th>
+            <div className="p-4 mt-6 transparent rounded-xl">
+              <button
+                className="bg-blue-500 text-white px-4 py-2 rounded-md mb-4"
+                onClick={toggleExpand}
+              >
+                {isExpanded ? "Fechar" : "Expandir"} Área
+              </button>
+              {isExpanded && (
+                <div className="bg-blue-100 p-4 rounded-xl mb-4">
+                  Conteúdo da área expansível
+                </div>
+              )}
+              <table className="w-full bg-blue-100 rounded-xl data-table">
+                <thead className="rounded-xl">
+                  <tr className="bg-blue-400 ">
+                    <th className="w-[20%] p-2">Ambiente</th>
+                    <th className="w-[15%] p-2">Prioridade</th>
                     <th className="w-[15%] p-2">Solicitação</th>
                     <th className="w-[15%] p-2">Hello</th>
                     <th className="w-[10%] p-2">Hello</th>
