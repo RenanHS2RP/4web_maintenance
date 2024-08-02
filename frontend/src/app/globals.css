@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 13, 143, 194;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.transparent {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chgfont {
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 20, 20, 20;
+    --background-end-rgb: 36, 93, 170;
+  }
+
+  .transparent {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .chgfont {
+    color: rgb(255, 255, 255);
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  background-size: cover; /* Garante que o gradiente cubra toda a área visível */
+  background-attachment: fixed; /* Faz o fundo não rolar com o conteúdo */
+  min-height: 100vh; /* Garante que o corpo tenha pelo menos a altura da viewport */
+  margin: 0; /* Remove margens padrão */
+}
+
+@layer components {
+  .data-table tr:nth-child(even) {
+    background-color: #d2e4fd;  
+  }
+}
