@@ -35,16 +35,6 @@ const cards = [
   },
 ];
 
-const table = [
-  {
-    enviroment: "Lorem ipsum odor amet, consectetuer adipiscing elit.",
-    equipment: "Steel Ball",
-    request: "Horse",
-    treatment: "Nyo-ho",
-  },
-  // Adicione mais linhas conforme necessário
-];
-
 export default function Home() {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -98,7 +88,129 @@ export default function Home() {
           </div>
         </main>
       </section>
-      <Footer />
-    </div>
+    </section>
   );
 }
+
+const table = [
+  {
+    "enviroment": "Caldearia",
+    "priority": "Alta",
+    "equipment": "Chave de fenda, Chave inglesa",
+    "request": "2024-08-01 10:30",
+    "status": "Em andamento",
+    "desc": "Manutenção das válvulas de segurança"
+},
+{
+    "enviroment": "Ferramentaria",
+    "priority": "Média",
+    "equipment": "Martelo, Alicate",
+    "request": "2024-08-01 09:00",
+    "status": "Concluído",
+    "desc": "Reparo de ferramentas manuais"
+},
+{
+    "enviroment": "Ala-B",
+    "priority": "Baixa",
+    "equipment": "Multímetro, Ferro de solda",
+    "request": "2024-08-01 11:15",
+    "status": "Pendente",
+    "desc": "Inspeção do sistema elétrico"
+},
+{
+    "enviroment": "Linha de Montagem",
+    "priority": "Alta",
+    "equipment": "Chave inglesa, Chave de torque",
+    "request": "2024-08-01 08:45",
+    "status": "Em andamento",
+    "desc": "Ajuste dos parafusos de segurança"
+},
+{
+    "enviroment": "Depósito",
+    "priority": "Média",
+    "equipment": "Empilhadeira, Carrinho de mão",
+    "request": "2024-08-01 10:00",
+    "status": "Em andamento",
+    "desc": "Manutenção da empilhadeira"
+},
+{
+    "enviroment": "Sala de Máquinas",
+    "priority": "Alta",
+    "equipment": "Chave Allen, Lubrificante",
+    "request": "2024-08-01 09:30",
+    "status": "Concluído",
+    "desc": "Lubrificação das engrenagens"
+},
+{
+    "enviroment": "Pintura",
+    "priority": "Baixa",
+    "equipment": "Compressor de ar, Pistola de pintura",
+    "request": "2024-08-01 11:00",
+    "status": "Pendente",
+    "desc": "Limpeza do compressor de ar"
+},
+{
+    "enviroment": "Soldagem",
+    "priority": "Alta",
+    "equipment": "Máscara de solda, Eletrodo",
+    "request": "2024-08-01 08:15",
+    "status": "Em andamento",
+    "desc": "Substituição de eletrodos de solda"
+},
+{
+    "enviroment": "Qualidade",
+    "priority": "Média",
+    "equipment": "Micrômetro, Paquímetro",
+    "request": "2024-08-01 10:45",
+    "status": "Concluído",
+    "desc": "Calibração de instrumentos de medição"
+},
+{
+    "enviroment": "Mecânica",
+    "priority": "Alta",
+    "equipment": "Chave de boca, Martelo de borracha",
+    "request": "2024-08-01 09:00",
+    "status": "Em andamento",
+    "desc": "Reparo na transmissão mecânica"
+},
+{
+    "enviroment": "Elétrica",
+    "priority": "Alta",
+    "equipment": "Multímetro, Chave de teste",
+    "request": "2024-08-01 08:00",
+    "status": "Em andamento",
+    "desc": "Revisão do sistema de fiação"
+},
+{
+    "enviroment": "Hidráulica",
+    "priority": "Média",
+    "equipment": "Mangueiras, Chave de grifo",
+    "request": "2024-08-01 09:45",
+    "status": "Concluído",
+    "desc": "Troca de mangueiras hidráulicas"
+},
+{
+    "enviroment": "Pneumática",
+    "priority": "Baixa",
+    "equipment": "Compressor de ar, Regulador de pressão",
+    "request": "2024-08-01 10:30",
+    "status": "Pendente",
+    "desc": "Verificação do sistema pneumático"
+},
+{
+    "enviroment": "Robótica",
+    "priority": "Alta",
+    "equipment": "Chave de fenda, Multímetro",
+    "request": "2024-08-01 08:30",
+    "status": "Em andamento",
+    "desc": "Manutenção preventiva dos robôs"
+},
+{
+    "enviroment": "Logística",
+    "priority": "Média",
+    "equipment": "Empilhadeira, Carrinho de mão",
+    "request": "2024-08-01 09:30",
+    "status": "Concluído",
+    "desc": "Verificação de segurança da empilhadeira"
+}
+];
