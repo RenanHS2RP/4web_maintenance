@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { AiFillBulb, AiFillClockCircle } from "react-icons/ai";
 import { BiCategory, BiSolidDashboard } from "react-icons/bi";
@@ -5,30 +7,30 @@ import { DiAndroid } from "react-icons/di";
 import { FaBuilding, FaIndustry, FaUser, FaWrench } from "react-icons/fa";
 import { Footer } from "./components/footer";
 import Aside from "./components/aside";
-import Card from "./components/card";
 import Table from "./components/table";
+import { useState } from "react";
 
 const cards = [
   {
-    color: "bg-orange-300",
+    color: "bg-red-600",
     quantity: "200",
     text: "Ambientes",
     icon: <FaBuilding className="text-5xl mx-auto" />,
   },
   {
-    color: "bg-green-300",
+    color: "bg-yellow-500",
     quantity: "200",
     text: "Ambientes",
     icon: <DiAndroid className="text-5xl mx-auto" />,
   },
   {
-    color: "bg-red-300",
+    color: "bg-green-600",
     quantity: "200",
     text: "Ambientes",
     icon: <AiFillClockCircle className="text-5xl mx-auto" />,
   },
   {
-    color: "bg-blue-300",
+    color: "bg-blue-600",
     quantity: "200",
     text: "Ambientes",
     icon: <AiFillBulb className="text-5xl mx-auto" />,
@@ -42,11 +44,13 @@ export default function Home() {
     setIsExpanded(!isExpanded);
   };
   return (
-    <div className="flex flex-col min-h-screen">
-      <section className="flex-1 flex">
-        <Aside />
-        <main className="flex-1">
-          <h1 className="text-4xl font-bold uppercase w-full bg-white/20 p-6 text-center">
+    <section className="flex flex-col min-h-screen">
+      <section className="flex-1 flex h-full">
+        <div className="fixed top-0 h-10px">
+          <Aside />
+        </div>
+        <main className="ml-64 flex-1">
+          <h1 className="text-4xl font-bold uppercase w-full transparent chgfont p-6 text-center">
             Sistema de Gestão de manutenção
           </h1>
           <div className="p-6">
@@ -68,8 +72,9 @@ export default function Home() {
                     <th className="w-[20%] p-2">Ambiente</th>
                     <th className="w-[15%] p-2">Prioridade</th>
                     <th className="w-[15%] p-2">Solicitação</th>
-                    <th className="w-[15%] p-2">Hello</th>
-                    <th className="w-[10%] p-2">Hello</th>
+                    <th className="w-[15%] p-2">Status</th>
+                    <th className="w-[30%] p-2">Descrição</th>
+                    <th className="w-[5%] p-2">Ações</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -77,15 +82,16 @@ export default function Home() {
                     <Table
                       key={index}
                       env={obj.enviroment}
-                      equip={obj.equipment}
+                      prio={obj.priority}
                       req={obj.request}
-                      treat={obj.treatment}
-                    />
+                      status={obj.status} 
+                      desc={obj.desc}                    />
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
+          <Footer />
         </main>
       </section>
     </section>
